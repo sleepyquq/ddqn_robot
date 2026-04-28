@@ -41,7 +41,8 @@
 Double DQN (DDQN) 提出将动作的选择和动作的评估解耦：
 1. **动作选择**：使用当前的主网络（Online Network）来选取下一个状态下的最优动作 $a^*$。
 2. **动作评估**：使用目标网络（Target Network）来评估该动作 $a^*$ 的 Q 值。
-公式为：$Y_t = R_{t+1} + \gamma Q_{target}(S_{t+1}, \arg\max_a Q_{online}(S_{t+1}, a))$。
+公式为：
+$Y_t = R_{t+1} + \gamma Q_{target}(S_{t+1}, \arg\max_a Q_{online}(S_{t+1}, a))$。
 这一改进可以有效抑制过度乐观的 Q 值估计，使学习过程更加稳定。此外，我们也保留了经验回放（Experience Replay）和目标网络（Target Network）两大核心机制。
 
 ## 3. 实现细节
